@@ -4,6 +4,8 @@ This is a modified dataset from <https://www.openintro.org/data/index.php?data=b
 
 J.B. Benson. Season of birth and onset of locomotion: Theoretical and methodological implications. In: Infant behavior and development 16.1 (1993), pp. 69-81. issn: 0163-6383. <https://www.sciencedirect.com/science/article/abs/pii/0163638393800298?via%3Dihub>
 
+<img src="figures/monthlytempHIST.png">
+
 <img src="figures/temppermonth.png">
 
 <img src="figures/crawlagepermonth.png">

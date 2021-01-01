@@ -1,3 +1,5 @@
-# age.at.crawl
-temperature and infant crawl age
+# Temperature and crawling age
+
+<img src="figures/crawlagepermonth.png">
+
 <img src="figure1.png">

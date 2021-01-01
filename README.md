@@ -1,4 +1,4 @@
-# Temperature and crawling age
+# Temperature and crawling age of infants in months
 
 This is a modified dataset from <https://www.openintro.org/data/index.php?data=babies_crawl> that generates the crawling age of 414 infants along with the average outdoor temperature for boxplot and correlational plotting purposes. The source paper:
 

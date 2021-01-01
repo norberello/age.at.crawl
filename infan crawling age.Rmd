@@ -1,0 +1,122 @@
+---
+title: "Baby crawling age"
+author: "Norberto Asensio"
+date: "01/01/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(openintro)
+str(babies_crawl)
+head(babies_crawl)
+plot(babies_crawl$temperature,babies_crawl$avg_crawling_age)
+cor(babies_crawl$temperature,babies_crawl$avg_crawling_age)
+```
+
+```{r}
+#reproduce data points (one infant per line) with small sd for age (in months) and temperature (F)
+jan <- data.frame(month=rep(c("Jan"), each=32),
+                  age=rnorm(32,29.8,1.5),
+                  temp=rnorm(32,66,1.5))
+feb <- data.frame(month=rep(c("Feb"), each=36),
+                  age=rnorm(36,30.5,1.5),
+                  temp=rnorm(36,73,1.5))
+mar <- data.frame(month=rep(c("Mar"), each=23),
+                  age=rnorm(23,29.7,1.5),
+                  temp=rnorm(23,72,1.5))
+apr <- data.frame(month=rep(c("Apr"), each=26),
+                  age=rnorm(26,31.8,1.5),
+                  temp=rnorm(26,63,1.5))
+may <- data.frame(month=rep(c("May"), each=27),
+                  age=rnorm(27,28.6,1.5),
+                  temp=rnorm(27,52,1.5))
+jun <- data.frame(month=rep(c("Jun"), each=29),
+                  age=rnorm(29,31.4,1.5),
+                  temp=rnorm(29,39,1.5))
+jul <- data.frame(month=rep(c("Jul"), each=21),
+                  age=rnorm(21,33.6,1.5),
+                  temp=rnorm(21,33,1.5))
+aug <- data.frame(month=rep(c("Aug"), each=45),
+                  age=rnorm(45,32.8,1.5),
+                  temp=rnorm(45,37,1.5))
+sep <- data.frame(month=rep(c("Sep"), each=38),
+                  age=rnorm(38,33.8,1.5),
+                  temp=rnorm(38,33,1.5))
+oct <- data.frame(month=rep(c("Oct"), each=44),
+                  age=rnorm(44,33.4,1.5),
+                  temp=rnorm(44,37,1.5))
+nov <- data.frame(month=rep(c("Nov"), each=49),
+                  age=rnorm(49,33.4,1.5),
+                  temp=rnorm(49,48,1.5))
+dec <- data.frame(month=rep(c("Dec"), each=44),
+                  age=rnorm(44,32.3,1.5),
+                  temp=rnorm(44,57,1.5))
+crawl.ds<-rbind(jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec)
+#order by Month, not alphabetically
+crawl.ds$month <- factor(crawl.ds$month, c("Jan","Feb","Mar", "Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"))      
+```
+
+```{r}
+boxplot(age ~ month, outline = FALSE,crawl.ds)
+```
+
+```{r}
+library(ggplot2)
+ggplot(crawl.ds,
+       aes(month, age)) + geom_boxplot()
+```
+
+```{r}
+ggplot(crawl.ds, aes(x=month, y=age, color=month)) +
+  geom_boxplot(fill="black")
+```
+
+```{r}
+mean(crawl.ds$temp)
+```
+
+```{r}
+ggplot(crawl.ds, aes(x=month, y=temp, color=month)) +
+  geom_boxplot()
+```
+
+T(°C) = (T(°F) - 32) / (9/5)
+
+```{r}
+crawl.ds$tempC<-((crawl.ds$temp)-32)/(9/5)
+ggplot(crawl.ds, aes(x=month, y=tempC, color=month)) +
+  geom_boxplot()
+```
+
+```{r}
+plot(crawl.ds$tempC,crawl.ds$age,ylab="crawling age (months)",
+     xlab="temperature in Celsius")
+```
+
+```{r}
+# Add the regression line
+ggplot(crawl.ds, aes(x=tempC, y=age)) + 
+  geom_point()+
+  geom_smooth(method=lm)
+```
+
+```{r}
+# Remove the confidence interval
+ggplot(crawl.ds, aes(x=tempC, y=age)) + 
+  geom_point()+
+  geom_smooth(method=lm, se=FALSE)
+```
+
+```{r}
+# Loess method
+ggplot(crawl.ds, aes(x=tempC, y=age)) + 
+  geom_point()+
+  geom_smooth()
+```
+
+
+

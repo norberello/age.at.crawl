@@ -10,4 +10,4 @@ J.B. Benson. Season of birth and onset of locomotion: Theoretical and methodolog
 
 <img src="figures/crawlagepermonth.png">
 
-<img src="figure1.png">
+<img src="figures/tempmonthsgradient.png">

@@ -1,0 +1,10 @@
+structure(list(birth_month = structure(c(5L, 4L, 8L, 1L, 9L, 
+7L, 6L, 2L, 12L, 11L, 10L, 3L), .Label = c("April", "August", 
+"December", "February", "January", "July", "June", "March", "May", 
+"November", "October", "September"), class = "factor"), avg_crawling_age = c(29.84, 
+30.52, 29.7, 31.84, 28.58, 31.44, 33.64, 32.82, 33.83, 33.35, 
+33.38, 32.32), sd = c(7.08, 6.96, 8.33, 6.21, 8.07, 8.1, 6.91, 
+7.61, 6.93, 7.29, 7.42, 5.71), n = c(32L, 36L, 23L, 26L, 27L, 
+29L, 21L, 45L, 38L, 44L, 49L, 44L), temperature = c(66L, 73L, 
+72L, 63L, 52L, 39L, 33L, 30L, 33L, 37L, 48L, 57L)), row.names = c(NA, 
+-12L), class = c("tbl_df", "tbl", "data.frame"))

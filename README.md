@@ -1,5 +1,7 @@
 # Temperature and crawling age of infants in months
 
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2FrI801ddZzbpf2%2Fgiphy.gif&f=1&nofb=1">
+
 This is a simulated dataset based on `babies_crawl` <https://www.openintro.org/data/index.php?data=babies_crawl> which generates the crawling age of 414 infants along with the average outdoor temperature for plotting and analyses purposes. 
 
 The source of original data:
